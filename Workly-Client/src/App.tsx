@@ -1,10 +1,9 @@
+import { Outlet } from 'react-router-dom';
+
 import { AppSidebar } from './layouts/AppSidebar';
 import { Navbar } from './layouts/Navbar';
 
-import {
-  SidebarInset,
-  SidebarProvider,
-} from '@/components/ui/sidebar';
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 
 function App() {
   return (
@@ -15,9 +14,7 @@ function App() {
         <Navbar />
 
         <main className="bg-background min-h-screen p-6">
-          <h1 className="text-3xl font-bold">
-            Welcome to Workly
-          </h1>
+          <Outlet />
         </main>
       </SidebarInset>
     </SidebarProvider>

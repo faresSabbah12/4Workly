@@ -9,36 +9,8 @@ import {
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import WorklyLogo from '@/assets/4Workly(1).png';
-import {
-  LayoutDashboard,
-  Users,
-  CalendarDays,
-  WalletCards,
-  Settings,
-} from 'lucide-react';
-
-const items = [
-  {
-    title: 'Dashboard',
-    icon: LayoutDashboard,
-  },
-  {
-    title: 'Employees',
-    icon: Users,
-  },
-  {
-    title: 'Attendance',
-    icon: CalendarDays,
-  },
-  {
-    title: 'Payroll',
-    icon: WalletCards,
-  },
-  {
-    title: 'Settings',
-    icon: Settings,
-  },
-];
+import { navigationRoutes } from '@/routes/navigationRoutes';
+import { Link } from 'react-router-dom';
 
 export function AppSidebar() {
   return (
@@ -58,9 +30,10 @@ export function AppSidebar() {
 
           <SidebarGroupContent>
             <SidebarMenu className="group-data-[collapsible=icon]:space-y-4">
-              {items.map((item) => (
+              {navigationRoutes.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
+                    asChild
                     className="
                       hover:bg-primary
                       hover:text-primary-foreground
@@ -76,9 +49,11 @@ export function AppSidebar() {
                       group-data-[collapsible=icon]:rounded-2xl
                     "
                   >
-                    <item.icon className="!size-6 shrink-0" />
+                    <Link to={item.path}>
+                      <item.icon className="!size-7 shrink-0" />
 
-                    <span>{item.title}</span>
+                      <span>{item.title}</span>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
