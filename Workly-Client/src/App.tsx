@@ -13,7 +13,8 @@ function App() {
       <SidebarInset>
         <Navbar />
 
-        <main className="bg-background min-h-screen p-6">
+        {/* <main className="bg-background min-h-screen p-6"> */}
+        <main className="bg-background min-h-screen p-6 animate-page">
           <Outlet />
         </main>
       </SidebarInset>
