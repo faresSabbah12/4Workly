@@ -9,6 +9,8 @@ export function Employees() {
         <p className="text-muted-foreground mt-1">
           Manage all employees within the organization.
         </p>
+
+        <button>Add New Employee</button>
       </div>
 
       <EmployeesTable />
